@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         String[] selectionArgs = { username, password };
         Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
         int count = cursor.getCount();
-        cursor.close();
+      
         db.close();
 
         if(count>0)
