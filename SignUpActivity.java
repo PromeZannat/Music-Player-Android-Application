@@ -39,12 +39,20 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signUpButtonId:
+                userRegister();
                 break;
             case R.id.signInTextViewId:
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 break;
         }
+
+    }
+
+    private void userRegister() {
+        String email = signUpEmailEditText.getText().toString().trim();
+        String password =  signUpPasswordEditText.getText().toString().trim();
+
 
     }
 }
