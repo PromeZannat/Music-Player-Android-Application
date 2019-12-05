@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setTitle("Sign In Activity");
 
         signInEmailEditText = findViewById(R.id.signInEmailEditTextId);
         signInPasswordEditText= findViewById(R.id.signInPasswordEditTextId);
