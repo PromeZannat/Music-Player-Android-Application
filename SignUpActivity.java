@@ -100,7 +100,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Registration not Successful", Toast.LENGTH_SHORT).show();
+                   if(task.getException() instanceof FirebaseAuthUserCollisionException)
+                   {
+                               Toast.makeText(getApplicationContext(), "User is already Registered", Toast.LENGTH_SHORT).show();
+                    }else {
+                       Toast.makeText(getApplicationContext(), "Error : "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                   }
                 }
             }
         });
